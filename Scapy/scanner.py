@@ -6,9 +6,14 @@ import sys
 
 
 def scapy_scanner():
+
+    """Main Method that will creat the package and sent to the host, iterating on the range of ports that you will
+    set """
+
     # Checking Command Line
     if len(sys.argv) != 4:
-        print("Usage: %s , target, startport, endport" % (sys.argv[0]))
+        print("Usage: %s ,target ip, startport, endport" % (sys.argv[0]))
+        print(" e.g : sudo python3 scanner.py 192.168.0.1 22 80")
         sys.exit(0)
 
     target = str(sys.argv[1])
