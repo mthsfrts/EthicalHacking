@@ -25,15 +25,15 @@ def scapy_scanner():
     for ports in range(startport, endport + 1):
         try:
             pkt = IP(dst=target) / TCP(dport=ports, flags='S')
-            response = sr1(pkt, timeout=2, verbose=0)
+            response = sr1(pkt, timeout=0.2, verbose=0)
 
             if response.haslayer(TCP) and response.getlayer(TCP).flags == 0x12:
                 print("Port " + str(ports) + " is open on your destination " + str(target) + "!")
 
-                sr(IP(dst=target) / TCP(dport=response.sport, flags='R'), timeout=2, verbose=0)
+                sr(IP(dst=target) / TCP(dport=response.sport, flags='R'), timeout=0.2, verbose=0)
 
         except (AttributeError, IndexError, ValueError) as error:
-            print(f"The Port - {ports} / Host - {target} is either missing or could not be reached!!")
+            print(f"The Port - {ports} / Host - {target} could not be reached!!")
 
     print("Scan is complete!")
 
