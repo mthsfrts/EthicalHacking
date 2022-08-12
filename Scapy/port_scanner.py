@@ -12,7 +12,7 @@ def port_scanner():
     # Checking Command Line
     if len(sys.argv) != 5:
         print("Usage: %s ,source port, target ip, start port, end port" % (sys.argv[0]))
-        print(" e.g : sudo python3 scanner.py 80 192.168.0.1 22 80")
+        print(" e.g : sudo python3 port_scanner.py 80 192.168.0.1 22 80")
         sys.exit(0)
 
     srcport = int(sys.argv[1])
