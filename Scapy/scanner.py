@@ -6,8 +6,8 @@ import sys
 
 
 def port_scanner():
-    """Main Method that will creat the package and sent to the host, iterating on the range of ports that you will
-    set """
+    """Main Method that will creat the packet and sent to the network, iterating on the range of ports that you will
+    set. This was possible by editing the original script from David Bombal"""
 
     # Checking Command Line
     if len(sys.argv) != 5:
